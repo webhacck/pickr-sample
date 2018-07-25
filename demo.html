@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pickrサンプルデモ</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://simonwep.github.io/pickr/dist/pickr.min.css">
+    <style>
+      .pcr-button {
+        border: 2px solid #ccc;
+      }
+    </style>
+
+  </head>
+  <body>
+        
+    <!-- ここにカラーピッカーが表示される -->
+    <div id="color-picker"></div>
+    
+    
+    
+    <script src="https://simonwep.github.io/pickr/dist/pickr.min.js"></script>
+    <script>
+      var pickr = new Pickr({
+
+        el: '#color-picker',
+
+        components: {
+          preview: true,
+          opacity: true,
+          hue: true,
+
+          output: {
+            hex: true,
+            rgba: true,
+            hsla: true,
+            input: true
+          }
+        },
+
+
+
+        onChange( hsva ) {
+
+          //body要素の背景色に選択したカラー値を設定する
+          document.body.style.backgroundColor = hsva.toHEX();
+
+        }
+
+      });
+    </script>
+     
+  </body>
+</html>
