@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pickrカスタマイズ例</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://simonwep.github.io/pickr/dist/pickr.min.css">
+  </head>
+  <body>
+        
+    <!-- ここにカラーピッカーが表示される -->
+    <div id="color-picker"></div>
+    
+    
+    
+    <script src="https://simonwep.github.io/pickr/dist/pickr.min.js"></script>
+    <script>
+      var pickr = new Pickr({
+  
+        el: '#color-picker',
+
+        //初期状態のカラー
+        // default: '#42445A',
+
+        //常に表示するかどうか
+        // showAlways: false,
+
+        //ショートカットキーの設定
+        closeWithKey: 'Escape',
+
+        //コンポーネントの表示設定
+        components: {
+          preview: true, //現在のカラー
+          opacity: true, //透明度
+          hue: true, //色相バー
+
+          output: {
+            hex: true,
+            rgba: true,
+            hsla: true,
+            cmyk: true,
+
+            input: true
+          }
+
+        },
+
+        //ボタンの日本語化
+        strings: {
+          save: '保存'
+        },
+
+        //カラーを選択した時に発動
+        onChange(hsva, instance) {
+          // console.log(hsva);
+          // console.log(instance);
+        },
+
+        //「Save」ボタンをクリックした時に発動
+        onSave(hsva, instance) {
+          // console.log(hsva);
+          // console.log(instance);
+        }
+      });
+    </script>
+     
+  </body>
+</html>
